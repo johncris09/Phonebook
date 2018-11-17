@@ -14,14 +14,22 @@
         if(empty(trim($_POST["username"]))){
             $username_err = "Please enter a username.";
         } else{
+            
+            $username = mysqli_real_escape_string($conn,$_POST['username']);
 
-           
-            $query = mysqli_query($conn, "SELECT * FROM User WHERE user_name='$username'");
-            $count = mysql_num_rows($query);
-            if($count == 0){
-                $username = trim($_POST["username"]);
-            }else{
+            $sql = "SELECT * FROM User WHERE user_name='".$username."'";
+            $result = mysqli_query($conn,$sql);
+            $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+            
+            $count = mysqli_num_rows($result);
+
+            // If result matched $myusername and $mypassword, table row must be 1 row
+          
+            if($count == 1) {
                 $username_err = "This username is already taken.";
+            }else {
+                
+                $username = trim($_POST["username"]);
             }
             
         }
@@ -47,9 +55,9 @@
 
         // Check input errors before inserting in database
         if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
-            ;
+            
 
-            $sql = "INSERT INTO User (user_name,password) VALUES ('$username', PASSWORD('$password'))";
+            $sql = "INSERT INTO User (user_name,password) VALUES ('$username', OLD_PASSWORD('$password'))";
 
             if (mysqli_query($conn, $sql)) {
                 echo "New record created successfully";
@@ -58,7 +66,11 @@
             }
 
             
+            ;
             
+        }else{
+
+           
         }
         
     }
