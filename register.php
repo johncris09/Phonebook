@@ -15,20 +15,15 @@
             $username_err = "Please enter a username.";
         } else{
 
+           
             $query = mysqli_query($conn, "SELECT * FROM User WHERE user_name='$username'");
-
-            if (!$query)
-            {
-                die('Error: ' . mysqli_error($conn));
-            }
-
-            //If username is exist!
-            if(mysqli_num_rows($query) > 0){
-                $username_err = "This username is already taken.";
-            }else{
+            $count = mysql_num_rows($query);
+            if($count == 0){
                 $username = trim($_POST["username"]);
+            }else{
+                $username_err = "This username is already taken.";
             }
-
+            
         }
 
          // Validate password
@@ -53,7 +48,7 @@
         // Check input errors before inserting in database
         if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
             ;
-/*
+
             $sql = "INSERT INTO User (user_name,password) VALUES ('$username', PASSWORD('$password'))";
 
             if (mysqli_query($conn, $sql)) {
@@ -61,7 +56,7 @@
             } else {
                 echo "Error: " . $sql . "<br>" . mysqli_error($conn);
             }
-*/
+
             
             
         }
