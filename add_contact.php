@@ -9,8 +9,7 @@
 	$home_phone_number=$work_phone_number=$city=$zip_code=$state=$bio='';
 	$firstname_err= $lastname_err= $nickname_err= $profile_pic_err=$cell_phone_number_err='';
 	$home_phone_number_err=$work_phone_number_err=$city_err=$zip_code_err=$state_err=$bio_err='';
-	$profile='';
-
+	
 	if(isset($_POST['submit']) && $_SERVER["REQUEST_METHOD"] == 'POST'){
 		
 		//$profile_pic = $_FILES['profile_pic']['name'];
@@ -34,41 +33,6 @@
 			
 		}
 		 
-		
-		
-		/*
-		if(isset($_FILES['profile_pic'])){
-			
-			//$profile_pic = addslashes(file_get_contents($_FILES["profile_pic"]["tmp_name"]));  
-      
-			//$profile_pic = $_FILES['profile_pic']['name'];
-			//$profile_pic_tmp = $_FILES['profile_pic']['tmp_name'];
-			
-			//move_uploaded_file($profile_pic_tmp, "img/$profile_pic");
-			
-			$profile_pic = $_FILESp['profile_pic']['tmp_name'];
-			$profile_pic = getimagesize($profile_pic);
-			
-			if(getimagesize($_FILES['profile_pic']['tmp_name'])==FALSE){
-				echo " error ";
-			}else{
-				$profile_pic = $_FILES['image']['tmp_name'];
-				$profile = addslashes(file_get_contents($profile));
-				saveimage($image);
-
-			}
-			
-	}*/
-	/*
-		//$check = getimagesize($_FILES["profile_pic"]["tmp_name"]);
-		if(getimagesize($_FILES["profile_pic"]["tmp_name"]) !== false){
-			$image = $_FILES['profile_pic']['tmp_name'];
-			$profile_pic = addslashes(file_get_contents($image));
-
-		}
-	*/
-		
-		
 		if(empty(trim($_POST["cell_phone_number"]))&&isset($_POST['cell_phone_number'])){
             $cell_phone_number_err= "Please enter a Cell Phone Number";
         } else{
@@ -115,32 +79,42 @@
 		if(isset($_POST['bio'])){
 			$bio = mysqli_real_escape_string($conn ,$_POST['bio']); 
 		}
+		
+		$destination_path = getcwd().DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR;
+		
+		/*if((isset($_FILES["profile_pic"]))){
+			//$target_path = $destination_path . basename( $_FILES["profile_pic"]["name"]);
+			//@move_uploaded_file($_FILES['profile_pic']['tmp_name'], $target_path);
+			foreach ($_FILES["profile_pic"]["error"] as $key => $error) {
+				if ($error == UPLOAD_ERR_OK) {
+					$tmp_name = $_FILES["profile_pic"]["tmp_name"][$key];
+					$name = $_FILES["profile_pic"]["name"][$key];
+					move_uploaded_file($tmp_name, $destination_path."/$name");
+				}
+			}
+		}
 
-		$output_dir = home_url()."img";
+		$profile_pic = $_FILES['profile_pic']['name'];
+		$tempName = $_FILES['profile_pic']['tmp_name'];
+		
+		if(isset($profile_pic))
+		{
+			if(!empty($profile_pic))
+			{
+				
+				if(move_uploaded_file($tempName, $destination_path.$profile_pic))
+				{
+					echo 'File Uploaded';
+				}
+			}
+		}
 
-if(isset($_FILES["profile_pic"])){
-    if ($_FILES["profile_pic"]["error"] > 0){
-      echo "Error: " . $_FILES["file"]["error"] . "<br>";
-    }else{
-        move_uploaded_file($_FILES["profile_pic"]["tmp_name"],$output_dir. $_FILES["profile_pic"]["name"]);
-        /*if(get_user_meta($_SESSION['userid'], 'user_profile_picture')==""){
-            add_user_meta($_SESSION['userid'], 'user_profile_picture', $_FILES['profile_pic']);
-        }else{
-            update_user_meta($_SESSION['userid'], 'user_profile_picture', $_FILES['profile_pic']);
-        }*/
-        echo "Uploaded File :".$_FILES["profile_pic"]["name"];
-    }
-}
-
+		$uploads_dir = '/uploads';
+		*/
+		
 
 		if(empty($cell_phone_number_err)){
             
-
-			//you can save contact with cellphone number only
-			//$profile 		= $_FILES['profile_pic']['name'];
-			//$profile_tmp 	= $_FILES['profile_pic']['tmp_name'];
-
-			//move_uploaded_file($profile_tmp, "img/$profile");
 
             $sql = "INSERT INTO contacts (First_Name,Last_Name,Nickname,Phone_Number,Work_Phone_Number,Home_Phone_Number,City,State,ZIpcode,Profile_Picture,Bio,User_ID) VALUES 
 			('$firstname','$lastname','$nickname','$cell_phone_number','$work_phone_number','$home_phone_number','$city','$state','$zip_code','$profile_pic','$bio','$user_id')";
@@ -270,4 +244,18 @@ if(isset($_FILES["profile_pic"])){
       });  
  });  
  </script>  
- 
+	<?php 
+	if(isset($_POST['submit'])){
+
+		$profile = $_FILES['profile_pic']['name'];
+		$profile_tmp = $_FILES['profile_pic']['tmp_name'];
+
+		$destination_path = getcwd().DIRECTORY_SEPARATOR."img".DIRECTORY_SEPARATOR;
+		move_uploaded_file($profile_tmp, "img/$profile");
+
+	}else{
+
+		echo 0;
+	}
+
+	?>
