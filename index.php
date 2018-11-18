@@ -29,7 +29,7 @@
 		<!-- content section -->
 		<div class="content">
 			<div class="floatl"><h1><?php echo $total_contacts ?> Contact(s) Total</h1></div>
-			<a class="floatr" href="add_contact.php"><input class="cancel_contact_button" type="button" value="New Contact"></a>		
+			<a class="floatr" href="insert_contact.php"><input class="cancel_contact_button" type="button" value="New Contact"></a>		
 			<div class="clear"></div>
 				<hr class="pageTitle">
 				<table id="contactsTable" class="display">
