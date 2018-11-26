@@ -1,0 +1,41 @@
+.glyphicon.glyphicon-alert.alert-info,
+.glyphicon.glyphicon-info-sign.alert-info,
+.glyphicon.glyphicon-question-sign.alert-info
+{
+    font-size: 30px;
+    font-weight: bold;  
+}
+.plus-icon span{
+    font-size:40px;
+    padding: 5px 5px;
+    border-radius: 50%;
+    color: #fff;
+    border: 10px soid black;
+    background-color: #337ab7;
+    box-shadow:  2px 2px 10px 2px  #282828;
+    
+    
+}
+.plus-icon span:hover{
+    color: #337ab7;
+    background-color: white;
+   
+}
+h4.modal-title{
+    color:#337ab7;
+    text-transform: capitalize;
+}
+div.row div.col-sm-5 h4.nickname{
+    text-transform:capitalize;
+    text-align:center;
+    color:#337ab7;
+}
+
+div.row div.col-sm-7 table tr td.value{
+    color:#337ab7;
+    font-weight: bold;
+    padding: 2px;
+}
+div.row div.col-sm-7 table {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
