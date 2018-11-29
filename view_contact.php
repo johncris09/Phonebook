@@ -26,10 +26,10 @@
                         <!-- View Contact -->
                        
                         <?php    if($row['Profile_Picture']==""){ ?>    
-                                <img class="img-thumbnail" src="img/logo.png"  alt='Profile Pic' style="width:95%;height:230px;">
+                                <img class="img-thumbnail" id="profpic" src="img/logo.png"  alt='Profile Pic'>
                                 <h4 class="nickname"><?php echo $row['Nickname']; ?></h4>
                         <?php }else{ ?>
-                                <img class="img-thumbnail" src=<?php echo '"img/'.$row['Profile_Picture'].'"' ?> alt='Profile Pic' style="width:95%;height:230px;">
+                                <img class="img-thumbnail" id="profpic" src=<?php echo '"img/'.$row['Profile_Picture'].'"' ?> alt='Profile Pic' >
                                 <h4 class="nickname"><?php echo $row['Nickname']; ?></h4>
 
                         <?php } ?>
@@ -42,7 +42,7 @@
                             </tr>
                             <tr>
                                 <td>Work Phone #</td>
-                                <td class="value"><?php echo $row['Phone_Number'] ?></td>
+                                <td class="value"><?php echo $row['Work_Phone_Number'] ?></td>
                             </tr>
                             <tr>
                                 <td>Home Phone #</td>
@@ -50,7 +50,7 @@
                             </tr>
                             <tr>
                                 <td>Address</td>
-                                <td class="value"><?php echo $row["City"] . ", " . $row["State"] . " " . $row["ZIpcode"]?> </td>
+                                <td class="value"><?php echo $row["City"] . "" . $row["State"] . " " . $row["ZIpcode"]?> </td>
 
                             </tr>
                            
@@ -60,7 +60,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <blockquote class="well blockquote-reverse pull-right"> <?php echo $row['Bio']; ?> </blockquote>
+                        <blockquote><dfn> <?php echo $row['Bio']; ?></dfn> </blockquote>
                     </div>
                 </div>
                             
