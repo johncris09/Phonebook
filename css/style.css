@@ -16,6 +16,24 @@
     
     
 }
+@media (max-width: 700px) {
+    #profpic{
+        width:50%;
+        margin-left: 25%;
+    }
+    
+}
+
+@media (max-width: 700px) {
+    #view_contact{
+        overflow-x: scroll;
+        overflow-y: scroll;
+    }
+    }
+}
+
+
+
 .plus-icon span:hover{
     color: #337ab7;
     background-color: white;
@@ -38,4 +56,56 @@ div.row div.col-sm-7 table tr td.value{
 }
 div.row div.col-sm-7 table {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+footer {
+    border-top: 5px solid #CDB380;
+    background: #337ab7 none repeat scroll 0% 0%;
+    padding-top: 30px;
+    margin-top: 60px;
+    clear: both;
+    color: #AAA;
+    display: block;
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+footer li {
+    float: left;
+}
+
+footer li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 12px 14px;
+    text-decoration: none;
+}
+
+#view_contact{
+    margin-left:20px;
+    margin-right: 20px;
+    overflow: scroll;
+}
+
+
+footer img{
+    width:35px;
+    height:35px;
+}
+footer img:hover{
+    width:52px;
+    height:50px;
+}
+
+.copyright{
+    background: rgb(37, 65, 160) none repeat scroll 0% 0%;
+    padding-top:15px;
+    padding-bottom: 5px;
 }
