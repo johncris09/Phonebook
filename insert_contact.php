@@ -177,6 +177,14 @@
 			</div>
 		</div>
 		</form>
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+
+				<!-- Footer -->
+				<?php include('assets/footer.php'); ?>
+
+			</div>
+		</div>
 	</div>
 </div>
 <div class="modal" id="add_err" role="dialog">
