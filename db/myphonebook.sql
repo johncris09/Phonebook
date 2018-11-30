@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 18, 2018 at 10:46 AM
+-- Generation Time: Nov 30, 2018 at 01:17 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -44,14 +44,6 @@ CREATE TABLE `contacts` (
   `User_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `contacts`
---
-
-INSERT INTO `contacts` (`Contact_ID`, `First_Name`, `Last_Name`, `Nickname`, `Phone_Number`, `Work_Phone_Number`, `Home_Phone_Number`, `City`, `State`, `ZIpcode`, `Profile_Picture`, `Bio`, `User_ID`) VALUES
-(1, 'JOhn Cris', 'Manabo', 'John', '197238971892', '', '', '', '', '', 'IMG_20180925_114539.jpg', '', 3),
-(2, 'asdf', 'asdfasdf', 'asdf', 'DFG', 'asdf', 'asdf', 'asdf', 'asdfasd', 'asdf', 'IMG_20180925_114416.jpg', 0x6173646661736466, 3);
-
 -- --------------------------------------------------------
 
 --
@@ -61,15 +53,8 @@ INSERT INTO `contacts` (`Contact_ID`, `First_Name`, `Last_Name`, `Nickname`, `Ph
 CREATE TABLE `User` (
   `User_ID` int(11) NOT NULL,
   `User_Name` varchar(20) NOT NULL,
-  `Password` varchar(20) NOT NULL
+  `Password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `User`
---
-
-INSERT INTO `User` (`User_ID`, `User_Name`, `Password`) VALUES
-(3, 'johncris', '3c55d56a229eaf28');
 
 --
 -- Indexes for dumped tables
@@ -99,13 +84,13 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `Contact_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Contact_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
