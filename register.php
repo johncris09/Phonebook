@@ -53,9 +53,7 @@
 
         // Check input errors before inserting in database
         if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
-            
-
-            $sql = "INSERT INTO User (user_name,password) VALUES ('$username', OLD_PASSWORD('$password'))";
+            $sql = "INSERT INTO User (user_name,password) VALUES ('$username', PASSWORD('$password'))";
 
             if (mysqli_query($conn, $sql)) {
                 header("location: register.php?user_added=1");
