@@ -79,37 +79,42 @@
 			</div>
 			<div class="row">
 				<div class="col-sm-8 col-sm-offset-2" >
-					<form  role="form" actio="" method="post" style="margin-bottom:20px;" class="navbar-form">
+					<ul id="searchline">
+						<li>
+							<form  role="form" action="" method="post"  >
+								<table>
+									<tr>
+										<td>
+											<?php
+												$sql = "Select CONCAT(First_Name,' ', Last_Name) as Name, Nickname, Phone_Number from contacts";
+												if( $fields = mysqli_query($conn,$sql) ){
+													//Get fields information for all fields
+													echo "<select name='contact_fields' class='form-control' required>";
+													echo "<option value=''>Search by</option>";
+													while( $fieldinfo = mysqli_fetch_field($fields) ){
+														echo '<option value="'.$fieldinfo->name.'">'.$fieldinfo->name.'</option>';
+													}
+													echo "</select>";
+													//Free result set
+													mysqli_free_result($fields);
+												}
+											?>	
+										</td>
+										<td><input type="text" oninput="searchq()" name="search_value" value="<?php echo $search_value;  ?>" class="form-control" title="Search" autofocus required> </td>
+										<td><button style="float:right" id="submit" type="submit" name="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></td>
+									</tr>
+								</table>
+							</form>
 						
-						<table>
-							<tr>
-								<td>
-								<?php
-									$sql = "Select CONCAT(First_Name,' ', Last_Name) as Name, Nickname, Phone_Number from contacts";
-									if( $fields = mysqli_query($conn,$sql) ){
-										//Get fields information for all fields
-										echo "<select name='contact_fields' class='form-control' required>";
-										echo "<option value=''>Search by</option>";
-										while( $fieldinfo = mysqli_fetch_field($fields) ){
-											echo '<option value="'.$fieldinfo->name.'">'.$fieldinfo->name.'</option>';
-										}
-										echo "</select>";
-										//Free result set
-										mysqli_free_result($fields);
-									}
-								?>	
-
-
-								</td>
-								<td><input type="text" oninput="searchq()" name="search_value" value="<?php echo $search_value;  ?>" class="form-control" title="Search" autofocus required> </td>
-								<td><button style="float:right" id="submit" type="submit" name="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button></td>
-							</tr>
-
-
-						</table>
-						
-					</form>
+						</li>
+						<li style="float:right"><a title="Add Contact" href="insert_contact.php"><span class="glyphicon glyphicon-plus"></span></a></li>
+					</ul>
 					
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">	
 				<div class="container-fluid">
 					
 					<table class="table  table-condensed table-hover table-striped">
