@@ -1,3 +1,21 @@
+
+.bg-primary{
+    background-color: #337ab7;  
+    
+}
+div.navbar-header a.navbar-brand,
+div.collapse ul.nav li a
+{color:white;}
+div.navbar-header a.navbar-brand:hover,
+div.collapse ul.nav li a:hover{
+    color:white;
+}
+div.collapse ul.nav li.dropdown ul.dropdown-menu a{
+    color:black;
+    color: black;  
+}
+
+
 #searchline form{
     padding-top: 8px;
 }
