@@ -1,20 +1,4 @@
-<style>
-    .bg-primary{
-        background-color: #337ab7;  
-        
-    }
-    div.navbar-header a.navbar-brand,
-    div.collapse ul.nav li a
-    {color:white;}
-    div.navbar-header a.navbar-brand:hover,
-    div.collapse ul.nav li a:hover{
-        color:white;
-    }
-    div.collapse ul.nav li.dropdown ul.dropdown-menu a{
-        color:black;
-        color: black;  
-    }
-</style>
+
 
 <nav class="navbar navbar-default bg-primary">
     <div class="container-fluid">
@@ -28,7 +12,7 @@
             </button>
             <a class="navbar-brand" href="index.php">
                 <img style="float:left;" alt="My Phonebook Brand " src="img/logo.png" width="25" height="25" />
-                &nbsp;&nbsp;My Phonebook
+                &nbsp;&nbsp;<span id="brand-title">My Phonebook</span>
                 
              </a>
         </div>
@@ -37,7 +21,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li class=""><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
-            <li class=""><a href="insert_contact.php">Add Contact <span class="sr-only">/span></a></li>
+           
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
