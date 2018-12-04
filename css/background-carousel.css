@@ -10,14 +10,10 @@
 }
 
 
-html,body{
+html{
     
 background-size: cover;
 background-repeat: no-repeat;
-height: 100%;
-font-family: 'Numans', sans-serif;
-position: relative;
-min-height: 100%;
 }
 
 .carousel-fade .carousel-inner .item {
@@ -63,28 +59,28 @@ z-index: 4;
 }
 }
 .item:nth-child(1) {
-    background: url("../img/carousel/b1.jpg") no-repeat center center fixed;
+    background: url("../img/b1.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 .item:nth-child(2) {
-    background: url("../img/carousel/b3.jpg") no-repeat center center fixed;
+    background: url("../img/b3.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 .item:nth-child(3) {
-    background: url("../img/carousel/b4.jpg") no-repeat center center fixed;
+    background: url("../img/b4.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 .item:nth-child(4) {
-    background: url("../img/carousel/b2.jpg") no-repeat center center fixed;
+    background: url("../img/b2.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
