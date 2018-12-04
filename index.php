@@ -72,7 +72,6 @@
 					<?php include('assets/header.php'); ?>
 				</div>
 			</div>
-			<div class="row">
 				<div class="col-sm-4 col-sm-offset-4">
 					<h4 style="text-align:center; margin:20px;">List of Contact(<?php echo $total_contacts; ?>)</h4>
 				</div>
